@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd plasticapp
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: plasticapp/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - plasticapp/node_modules/**/*
